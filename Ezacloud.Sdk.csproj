@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.1;net8.0</TargetFrameworks>
+    <RootNamespace>Ezacloud.Sdk</RootNamespace>
+    <AssemblyName>Ezacloud.Sdk</AssemblyName>
+    <PackageId>Ezacloud.Sdk</PackageId>
+    <Version>0.2.0</Version>
+    <Authors>Eza Cloud</Authors>
+    <Company>Eza Cloud</Company>
+    <Description>Official .NET client library for Eza Cloud (PayEdge M-Pesa STK push, Transactional Email, Webhook Verification).</Description>
+    <PackageTags>eza;mpesa;payments;email;transactional;kenya;stkpush;payedge</PackageTags>
+    <PackageProjectUrl>https://eza.co.ke/docs</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/ezacloud/eza/tree/main/sdks/dotnet</RepositoryUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+</Project>
