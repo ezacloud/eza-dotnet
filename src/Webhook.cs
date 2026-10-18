@@ -46,7 +46,7 @@ namespace Ezacloud.Sdk
             if (Math.Abs(currentTimestamp - timestamp.Value) > toleranceSeconds)
                 throw new SignatureException($"timestamp outside tolerance threshold ({toleranceSeconds}s)");
 
-            var signedPayload = $"t.{timestamp.Value}.{rawBody}";
+            var signedPayload = $"{timestamp.Value}.{rawBody}";
             using var hmac = new HMACSHA256(Encoding.UTF8.GetBytes(secret));
             var hashBytes = hmac.ComputeHash(Encoding.UTF8.GetBytes(signedPayload));
             var computedHex = BitConverter.ToString(hashBytes).Replace("-", "").ToLowerInvariant();

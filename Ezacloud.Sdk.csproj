@@ -11,7 +11,7 @@
     <Description>Official .NET client library for Eza Cloud (PayEdge M-Pesa STK push, Transactional Email, Webhook Verification).</Description>
     <PackageTags>eza;mpesa;payments;email;transactional;kenya;stkpush;payedge</PackageTags>
     <PackageProjectUrl>https://eza.co.ke/docs</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/ezacloud/eza/tree/main/sdks/dotnet</RepositoryUrl>
+    <RepositoryUrl>https://github.com/ezacloud/eza-dotnet</RepositoryUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <Nullable>enable</Nullable>
