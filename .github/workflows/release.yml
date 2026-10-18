@@ -2,6 +2,8 @@ name: Release NuGet Package
 
 on:
   push:
+    branches:
+      - main
     tags:
       - 'v*'
   workflow_dispatch:
@@ -26,4 +28,15 @@ jobs:
         run: dotnet pack -c Release -o out Ezacloud.Sdk.csproj
 
       - name: Push to NuGet
-        run: dotnet nuget push out/*.nupkg --source https://api.nuget.org/v3/index.json
+        env:
+          NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
+        run: |
+          if [ -n "$NUGET_API_KEY" ]; then
+            dotnet nuget push out/*.nupkg --source https://api.nuget.org/v3/index.json --api-key "$NUGET_API_KEY" --skip-duplicate
+          else
+            echo "NUGET_API_KEY secret not found; attempting trusted publishing..."
+            dotnet nuget push out/*.nupkg --source https://api.nuget.org/v3/index.json --skip-duplicate || {
+              echo "Note: If using an API key, configure the NUGET_API_KEY secret in repository settings."
+              exit 1
+            }
+          fi
